@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Visualização de Avaliações</title>
+</head>
+<body>
+    <h1>Avaliações Submetidas</h1>
+    {% for evaluation in evaluations %}
+        <div>
+            <h2>{{ evaluation.evaluator_name }} - {{ evaluation.company }}</h2>
+            <p>Limpeza: {{ evaluation.cleanliness }}</p>
+            <p>Organização: {{ evaluation.organization }}</p>
+            <p>Apresentação: {{ evaluation.presentation }}</p>
+            <p>Qualidade da Comida: {{ evaluation.food_quality }}</p>
+            <p>Comentários: {{ evaluation.comments }}</p>
+        </div>
+    {% endfor %}
+</body>
+</html>

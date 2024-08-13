@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliações Administração</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .evaluation-container {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #007BFF;
+        }
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        h3 {
+            color: #28A745;
+        }
+    </style>
+</head>
+<body>
+    <% evaluations.forEach(function(evaluation) { %>
+        <div class="evaluation-container">
+            <h2>Avaliação para <%= evaluation.company %></h2>
+            <p>Limpeza: <strong><%= evaluation.cleanliness %></strong></p>
+            <p>Organização: <strong><%= evaluation.organization %></strong></p>
+            <p>Apresentação: <strong><%= evaluation.presentation %></strong></p>
+            <p>Qualidade da Comida: <strong><%= evaluation.food_quality %></strong></p>
+            <h3>Comentários:</h3>
+            <p><%= evaluation.comments %></p>
+        </div>
+    <% }); %>
+</body>
+</html>

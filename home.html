@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Sistema de Avaliação</title>
+</head>
+<body>
+    <% for(let message of messages) { %>
+        <div><%= message %></div>
+    <% } %>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #b4ec51, #429321); /* Verde claro */
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        h1 {
+            color: #333; /* Cor mais escura para contraste com fundo claro */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 2.5rem;
+        }
+        p {
+            color: #333; /* Cor mais escura para melhor legibilidade no fundo claro */
+            font-size: 1.2rem;
+        }
+        .button {
+            background-color: #0084ff;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            margin: 10px; /* Espaçamento uniforme entre botões */
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none; /* Remove o sublinhado dos links */
+        }
+        .button:hover {
+            background-color: #0057b7;
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
+        }
+        .admin-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <a href="/admin/evaluations" class="button admin-button">Administração</a>
+    <div class="header">
+        <h1>Seleção de Empresa para Avaliação</h1>
+        <p>Escolha uma empresa para avaliar a Casa Verde ou Jerimum com Gengibre.</p>
+    </div>
+    <div class="container">
+        <a href="/evaluate/Bizarte" class="button">Bizarte</a>
+        <a href="/evaluate/Reflora" class="button">Reflora</a>
+        <a href="/evaluate/Liberdade Solar" class="button">Liberdade Solar</a>
+        <a href="/evaluate/Convidados" class="button">Convidados</a>
+    </div>
+</body>
+</html>

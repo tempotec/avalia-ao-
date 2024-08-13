@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação da Casa Verde e Restaurante Jerimum com Gengibre</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #b4ec51, #429321); /* Verde claro */
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            height: 100vh; /* Ajustado para garantir o preenchimento total da altura da viewport */
+        }
+    
+        .section {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adicionado transição */
+        }
+    
+        .section:hover {
+            transform: translateY(-10px); /* Levitando o card */
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Sombra mais intensa ao levitar */
+        }
+    
+        .header h1 {
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sutil sombra de texto para melhor legibilidade */
+        }
+    
+        .header p {
+            color: #555;
+        }
+    
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .label {
+            margin-top: 10px;
+            color: #333;
+            font-weight: bold; /* Tornando os rótulos mais destacados */
+        }
+    
+        input[type="number"], textarea {
+            padding: 8px;
+            margin-top: 5px;
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+            color: #333;
+            transition: border-color 0.2s; /* Suavização na mudança de cor da borda */
+        }
+    
+        input[type="number"]:focus, textarea:focus {
+            border-color: #6fd4b2; /* Cor da borda ao focar */
+        }
+    
+        textarea {
+            height: 80px;
+            resize: none; /* Desabilitando o redimensionamento do textarea */
+        }
+    
+        .button {
+            background-color: #0084ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+            transition: background-color 0.3s; /* Suavização da transição da cor de fundo */
+        }
+    
+        .button:hover {
+            background-color: #0057b7; /* Cor do botão ao passar o mouse */
+        }
+    
+        .button-submit {
+            text-align: center;
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="header">
+        <h1>Avaliações</h1>
+    </div>
+    <form action="/submit_evaluation" method="post" class="form">
+        <div class="section">
+            <h2>Casa Verde</h2>
+            <p>Por favor, avalie os seguintes aspectos da Casa Verde:</p>
+            <input type="hidden" name="company_casa_verde" value="Casa Verde">
+            <label for="cleanliness_casa_verde">Limpeza:</label>
+            <input type="number" id="cleanliness_casa_verde" name="cleanliness_casa_verde" min="0" max="10" required>
+            <label for="organization_casa_verde">Organização:</label>
+            <input type="number" id="organization_casa_verde" name="organization_casa_verde" min="0" max="10" required>
+            <label for="comments_casa_verde">Comentários:</label>
+            <textarea id="comments_casa_verde" name="comments_casa_verde"></textarea>
+        </div>
+        <div class="section">
+            <h2>Restaurante Jerimum com Gengibre</h2>
+            <p>Por favor, avalie os seguintes aspectos do Restaurante:</p>
+            <input type="hidden" name="company_jerimum" value="Jerimum com Gengibre">
+            <label for="cleanliness_jerimum">Limpeza:</label>
+            <input type="number" id="cleanliness_jerimum" name="cleanliness_jerimum" min="0" max="10" required>
+            <label for="presentation_jerimum">Apresentação:</label>
+            <input type="number" id="presentation_jerimum" name="presentation_jerimum" min="0" max="10" required>
+            <label for="organization_jerimum">Organização:</label>
+            <input type="number" id="organization_jerimum" name="organization_jerimum" min="0" max="10" required>
+            <label for="food_quality_jerimum">Qualidade da Comida:</label>
+            <input type="number" id="food_quality_jerimum" name="food_quality_jerimum" min="0" max="10" required>
+            <label for="comments_jerimum">Comentários:</label>
+            <textarea id="comments_jerimum" name="comments_jerimum"></textarea>
+        </div>
+        <div class="button-submit">
+            <button type="submit" class="button">Enviar Avaliações</button>
+        </div>
+    </form>
+</body>
+</html>
